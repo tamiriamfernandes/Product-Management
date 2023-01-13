@@ -12,3 +12,5 @@
 /ProductManagement/ProductManagement.Data.Database/obj
 /ProductManagement/ProductManagement.Domain/bin/Debug/net6.0
 /ProductManagement/ProductManagement.Domain/obj
+/ProductManagement/ProductManagement.Domain.Core/obj
+/ProductManagement/ProductManagement.Domain.Core/bin/Debug/net6.0
