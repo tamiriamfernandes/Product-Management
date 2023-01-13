@@ -22,6 +22,8 @@ public static class DependencyInjection
 
         services.AddScoped<IProductService, ProductService>();
 
+        services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
         return services;
     }
 }

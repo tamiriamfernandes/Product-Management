@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProductManagement.Data.Database.Contexts;
 
@@ -11,9 +12,10 @@ using ProductManagement.Data.Database.Contexts;
 namespace ProductManagement.Data.Database.Migrations
 {
     [DbContext(typeof(ProductManagementContext))]
-    partial class ProductManagementContextModelSnapshot : ModelSnapshot
+    [Migration("20230113063229_Create_Database")]
+    partial class Create_Database
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -42,17 +44,6 @@ namespace ProductManagement.Data.Database.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("varchar(200)");
-
-                    b.Property<string>("DescriptionProvider")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DocumentProvider")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdProvider")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

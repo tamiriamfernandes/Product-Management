@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using ProductManagement.Domain.Entities;
 
 namespace ProductManagement.Data.Database.Contexts

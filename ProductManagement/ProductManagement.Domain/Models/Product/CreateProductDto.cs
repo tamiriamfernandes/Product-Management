@@ -1,19 +1,20 @@
-﻿namespace ProductManagement.Domain.Entities
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProductManagement.Domain.Models.Product
 {
-    public class Product 
+    public class CreateProductDto
     {
-        public int Id { get; set; }
+        [Required(ErrorMessage = "O campo descrição é obrigatório")]
         public string Description { get; set; }
-        public bool Active { get; private set; }
         public DateTime DateFabrication { get; set; }
         public DateTime DateValidity { get; set; }
         public int IdProvider { get; set; }
         public string DescriptionProvider { get; set; }
         public string DocumentProvider { get; set; }
-
-        public void ActiveProduct(bool active)
-        {
-            this.Active = active;
-        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProductManagement.Domain.Core.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -12,5 +13,8 @@ namespace ProductManagement.Domain.Core.Contracts.Repositories
     {
         Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken = default);
         Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> expression);
+        Task<PaginatedList<TEntity>> GetPaginatedAsync(Expression<Func<TEntity, bool>> expression, int page, int pageSize);
+        void Update(TEntity entity);
+        void Delete(TEntity entity);
     }
 }

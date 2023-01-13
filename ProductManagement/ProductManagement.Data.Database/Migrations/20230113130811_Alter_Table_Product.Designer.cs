@@ -12,14 +12,14 @@ using ProductManagement.Data.Database.Contexts;
 namespace ProductManagement.Data.Database.Migrations
 {
     [DbContext(typeof(ProductManagementContext))]
-    [Migration("20230113022003_Create_Database")]
-    partial class Create_Database
+    [Migration("20230113130811_Alter_Table_Product")]
+    partial class Alter_Table_Product
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.6")
+                .HasAnnotation("ProductVersion", "6.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -44,6 +44,17 @@ namespace ProductManagement.Data.Database.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("varchar(200)");
+
+                    b.Property<string>("DescriptionProvider")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DocumentProvider")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IdProvider")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
